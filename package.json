@@ -1,14 +1,16 @@
 {
-  "name": "img-optimize-worker",
-  "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
-  },
-  "dependencies": {
-    "hono": "^3.12.7"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20231218.0",
-    "wrangler": "^3.22.0"
-  }
+	"name": "img-optimize-worker",
+	"scripts": {
+		"dev": "wrangler dev src/index.ts",
+		"deploy": "wrangler deploy --minify src/index.ts",
+		"fix": "biome check --apply ./src"
+	},
+	"dependencies": {
+		"hono": "^3.12.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.5.3",
+		"@cloudflare/workers-types": "^4.20231218.0",
+		"wrangler": "^3.22.0"
+	}
 }
