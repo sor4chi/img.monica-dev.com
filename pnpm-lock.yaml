@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   hono:
-    specifier: ^3.12.7
-    version: 3.12.7
+    specifier: 4.0.0-rc.2
+    version: 4.0.0-rc.2
 
 devDependencies:
   '@biomejs/biome':
@@ -595,8 +595,8 @@ packages:
       function-bind: 1.1.2
     dev: true
 
-  /hono@3.12.7:
-    resolution: {integrity: sha512-jfyIoE8D5I1PGj0tXAGqpQ2miAWBBuHFjJsWjh0hbBVludQ8QO4lF6KTbPvjMi4venp8Q6DyMoJ51CwP6L5LNA==}
+  /hono@4.0.0-rc.2:
+    resolution: {integrity: sha512-c7PeKKtwidjkgurjyjKQpCr+oRuL9TXP1JzxqKxof2f4UT/CjEXKQkreawTzMjpalujrSCYcTOm3SBkkW0NxpQ==}
     engines: {node: '>=16.0.0'}
     dev: false
 

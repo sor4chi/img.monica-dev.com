@@ -6,7 +6,7 @@
 		"fix": "biome check --apply ./src"
 	},
 	"dependencies": {
-		"hono": "^3.12.7"
+		"hono": "4.0.0-rc.2"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3",
