@@ -1,0 +1,14 @@
+diff --git a/package.json b/package.json
+index 32c205e2256e3f7be2e6c3c1469dd4b4f795c70d..31f592e45fe008e4ff9974c493b1c167bda53d46 100644
+--- a/package.json
++++ b/package.json
+@@ -339,6 +339,9 @@
+       "cookie": [
+         "./dist/types/helper/cookie"
+       ],
++      "accept": [
++        "./dist/types/helper/accept"
++      ],
+       "compress": [
+         "./dist/types/middleware/compress"
+       ],

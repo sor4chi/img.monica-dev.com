@@ -12,5 +12,10 @@
 		"@biomejs/biome": "1.5.3",
 		"@cloudflare/workers-types": "^4.20231218.0",
 		"wrangler": "^3.22.0"
+	},
+	"pnpm": {
+		"patchedDependencies": {
+			"hono@4.0.0-rc.2": "patches/hono@4.0.0-rc.2.patch"
+		}
 	}
 }

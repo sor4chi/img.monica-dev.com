@@ -4,10 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  hono@4.0.0-rc.2:
+    hash: vffibwa2bbt5ldjlaxpvqhr2ia
+    path: patches/hono@4.0.0-rc.2.patch
+
 dependencies:
   hono:
     specifier: 4.0.0-rc.2
-    version: 4.0.0-rc.2
+    version: 4.0.0-rc.2(patch_hash=vffibwa2bbt5ldjlaxpvqhr2ia)
 
 devDependencies:
   '@biomejs/biome':
@@ -595,10 +600,11 @@ packages:
       function-bind: 1.1.2
     dev: true
 
-  /hono@4.0.0-rc.2:
+  /hono@4.0.0-rc.2(patch_hash=vffibwa2bbt5ldjlaxpvqhr2ia):
     resolution: {integrity: sha512-c7PeKKtwidjkgurjyjKQpCr+oRuL9TXP1JzxqKxof2f4UT/CjEXKQkreawTzMjpalujrSCYcTOm3SBkkW0NxpQ==}
     engines: {node: '>=16.0.0'}
     dev: false
+    patched: true
 
   /is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
