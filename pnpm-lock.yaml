@@ -13,6 +13,9 @@ dependencies:
   hono:
     specifier: 4.0.0-rc.2
     version: 4.0.0-rc.2(patch_hash=vffibwa2bbt5ldjlaxpvqhr2ia)
+  wasm-image-optimization:
+    specifier: ^0.3.0
+    version: 0.3.0
 
 devDependencies:
   '@biomejs/biome':
@@ -811,6 +814,10 @@ packages:
     dependencies:
       '@fastify/busboy': 2.1.0
     dev: true
+
+  /wasm-image-optimization@0.3.0:
+    resolution: {integrity: sha512-2WFLh2lh6N1+YRpHFSfnCVsYeQ4UITW+4WF9eIYMDadA8zKT4uFZZrttNvMVxWb0FEhTHShqw9wN2KlJ4vWHzA==}
+    dev: false
 
   /workerd@1.20231218.0:
     resolution: {integrity: sha512-AGIsDvqCrcwhoA9kb1hxOhVAe53/xJeaGZxL4FbYI9FvO17DZwrnqGq+6eqItJ6Cfw1ZLmf3BM+QdMWaL2bFWQ==}

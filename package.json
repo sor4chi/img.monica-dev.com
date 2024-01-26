@@ -6,7 +6,8 @@
 		"fix": "biome check --apply ./src"
 	},
 	"dependencies": {
-		"hono": "4.0.0-rc.2"
+		"hono": "4.0.0-rc.2",
+		"wasm-image-optimization": "^0.3.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3",
