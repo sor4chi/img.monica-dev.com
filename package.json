@@ -3,7 +3,8 @@
 	"scripts": {
 		"dev": "wrangler dev src/index.ts",
 		"deploy": "wrangler deploy --minify src/index.ts",
-		"fix": "biome check --apply ./src"
+		"fix": "biome check --apply ./src",
+		"test": "vitest"
 	},
 	"dependencies": {
 		"hono": "4.0.0-rc.2",
@@ -12,6 +13,8 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.5.3",
 		"@cloudflare/workers-types": "^4.20231218.0",
+		"vitest": "^1.2.2",
+		"vitest-environment-miniflare": "^2.14.2",
 		"wrangler": "^3.22.0"
 	},
 	"pnpm": {
