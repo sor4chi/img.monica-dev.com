@@ -2,7 +2,7 @@
 	"name": "img-optimize-worker",
 	"scripts": {
 		"dev": "wrangler dev src/index.ts",
-		"deploy": "wrangler deploy --minify src/index.ts",
+		"deploy": "wrangler deploy --keep-vars --minify src/index.ts",
 		"fix": "biome check --apply ./src",
 		"test": "vitest"
 	},
