@@ -13,6 +13,8 @@ const isValidUrl = (url: string) => {
 
 const app = new Hono();
 
+const FOREVER_CACHE_CONTROL = "public, max-age=31536000, immutable";
+
 app.get("*", async (c) => {
 	const type = accepts(c, {
 		header: "Accept",
@@ -58,7 +60,7 @@ app.get("*", async (c) => {
 		const response = new Response(srcImage, {
 			headers: {
 				"Content-Type": contentType,
-				"Cache-Control": "public, max-age=31536000, immutable",
+				"Cache-Control": FOREVER_CACHE_CONTROL,
 			},
 		});
 		c.executionCtx.waitUntil(cache.put(cacheKey, response.clone()));
@@ -79,8 +81,8 @@ app.get("*", async (c) => {
 	const response = new Response(image, {
 		headers: {
 			"Content-Type": `image/${format}`,
-			"Cache-Control": "public, max-age=31536000, immutable",
 			date: new Date().toUTCString(),
+			"Cache-Control": FOREVER_CACHE_CONTROL,
 		},
 	});
 	c.executionCtx.waitUntil(cache.put(cacheKey, response.clone()));
