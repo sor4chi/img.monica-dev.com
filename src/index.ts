@@ -104,8 +104,6 @@ const ERROR_MESSAGE = (err: Error, url: string) =>
 **URL**: ${url}
 
 \`\`\`
-${err.message}
-
 ${err.stack}
 \`\`\`
 `.trim();
