@@ -11,7 +11,13 @@ const isValidUrl = (url: string) => {
 	}
 };
 
-const app = new Hono();
+interface Env {
+	Bindings: {
+		DISCORD_WEBHOOK_URL: string;
+	};
+}
+
+const app = new Hono<Env>();
 
 const FOREVER_CACHE_CONTROL = "public, max-age=31536000, immutable";
 
@@ -87,6 +93,39 @@ app.get("*", async (c) => {
 	});
 	c.executionCtx.waitUntil(cache.put(cacheKey, response.clone()));
 	return response;
+});
+
+const TZ = "Asia/Tokyo";
+
+const ERROR_MESSAGE = (err: Error, url: string) =>
+	`
+## Error on ${new Date().toLocaleString("ja-JP", { timeZone: TZ })}
+
+**URL**: ${url}
+
+\`\`\`
+${err.message}
+
+${err.stack}
+\`\`\`
+`.trim();
+
+app.onError(async (err, c) => {
+	const webhookUrl = c.env.DISCORD_WEBHOOK_URL;
+	if (!webhookUrl)
+		return c.text("internal server error (no webhook url)", { status: 500 });
+	const webhook = new URL(webhookUrl);
+	const res = await fetch(webhook.toString(), {
+		method: "POST",
+		headers: { "content-type": "application/json" },
+		body: JSON.stringify({
+			content: ERROR_MESSAGE(err, c.req.url),
+		}),
+	});
+	if (!res.ok) {
+		return c.text("internal server error (failed to report)", { status: 500 });
+	}
+	return c.text("internal server error (reported)", { status: 500 });
 });
 
 export default app;
